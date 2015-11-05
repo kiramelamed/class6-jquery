@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Cheatsheet</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+	<style type="text/css">
+
+		.element1 {
+			height: 200px;
+			background-color: purple;
+		}
+
+		.element2 {
+			height: 50px;
+			background-color: red;
+		}
+
+		.element3 {
+			height: 300px;
+			background-color: yellow;
+		}
+
+		.element4 {
+			height: 35px;
+			background-color: black;
+			color: white;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>jQuery</h1>
+	<!-- A library is simply a collection of functions and code that someone has written to make a set of tasks easier in a specific programming language 
+
+	By including the jQuery library you can call upon the functions in your code
+
+	you can includ the library by linking it in the head section to a saved file downloaded from jquery.com or linked directly to the url address.
+
+	You can call functions in an arbitrary <script> block after your library has been
+    loaded with a script tag:
+	"function() {}" 
+
+	You can determine if the page is using jQuery by typing 'jQuery' in the console of your browser. You can also type '$'. 
+
+	The Document Object Model (DOM)
+	The DOM is a standard for interacting with and representing objects in HTML, XHTML, and XML
+	jQuery makes it incredibly easy to select elements in the DOM, which include practically any HTML tag or element
+
+	jQuery can be used to select elements using a similar syntax to CSS
+	The format for selecting elements is: $("<element name, class, id, or XPath>")
+		ex. $("body")
+
+	The $(document).ready() snippet
+	This snippet ensures that your code doesn't run until your document ﬁres a ready event
+	The ready event ﬁres when all of the page's DOM elements are loaded, even if multimedia elements aren't fully loaded
+	By encapsulating all of our jQuery code to only run when the document is ready, the elements you're selecting will deﬁnitely be on the page when you access them
+
+	A callback is an anonymous function supplied to another function to be run when that function is done running
+	to use this feature define two funcrtions and then call upon them like so: someRunner(someOtherFunction);
+
+	Here are some examples:
+
+	-->
+
+	<div class="element1"></div>
+	<div class="element2"></div>
+	<div class="element3"></div>
+	<div class="element4">Click Here to see the secret</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".element1").fadeOut(4000);
+
+			$(".element2").slideUp(3000);
+
+			var animateBlock = function(){   
+				$(".element3").animate( {
+					opacity: .5} 
+					) 
+			}; 
+
+				$(".element3").show(animateBlock);
+
+			$(".element4").click(
+				function(){     
+					alert('Ha ha! Made you look! =P');   
+				} 
+				);
+		}); 
+	</script>
+	
+
+
+</body>
+</html>
